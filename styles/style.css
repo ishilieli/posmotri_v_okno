@@ -262,6 +262,19 @@ a {
     margin: 0.125rem;
 }
 
+.content__card-link:hover .content__video-card-title {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+}
+
+
+.content__card-link:hover .content__video-card-description {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 0;
+}
+
 .content__video-card {
     display: flex;
     align-items: flex-start;
