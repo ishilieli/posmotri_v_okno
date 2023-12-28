@@ -140,7 +140,7 @@ a {
     gap: .375rem;
 }
 
-.search-form__label-text:hover {
+.search-form__label:hover .search-form__label-text {
     text-decoration-line: underline;
     text-underline-offset: 2px;
     text-decoration-thickness: 0;
@@ -155,11 +155,6 @@ a {
     font-size: 1.125rem;
     min-width: 225px;
     appearance: none;
-}
-
-.search-form__textfield:focus-visible {
-    outline: 1px solid var(--white-color);
-    outline-offset: 1px;
 }
 
 .search-form__textfield:active {
