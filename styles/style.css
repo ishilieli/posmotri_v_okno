@@ -6,7 +6,6 @@
 
 :where(*,*::before,*::after) {
     box-sizing: border-box;
-    font-family: 'Fira Sans Condensed', Arial, sans-serif;
 }
 
 html {
@@ -30,13 +29,14 @@ a {
 
 @layer components {
     .button {
-        border: 1px solid var(--white-color);
+        border: 1px solid currentColor;
         background: transparent;
         font-size: 1.125rem;
         color: var(--white-color);
         font-weight: 700;
         padding: .375rem 0;
         cursor: pointer;
+        font-family: inherit;
     }
 
     .button:hover {
@@ -80,6 +80,7 @@ a {
     display: flex;
     place-content: center;
     align-items: center;
+    font-family: 'Fira Sans Condensed', Arial, sans-serif;
 }
 
 @media screen and (max-width: 1199px) {
@@ -93,7 +94,7 @@ a {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    max-width: 1140px;
+    width: 1140px;
     gap: 1.875rem;
 }
 
@@ -151,10 +152,15 @@ a {
     border: 1px solid transparent;
     border-top-color: var(--white-color);
     border-bottom-color: var(--white-color);
-    color: rgba(255, 255, 255, 0.70);
+    color: var(--white-color);
     font-size: 1.125rem;
     min-width: 225px;
     appearance: none;
+    font-family: inherit;
+}
+
+.search-form__textfield::placeholder {
+    color: rgba(255, 255, 255, 0.70);
 }
 
 .search-form__textfield:active {
@@ -232,17 +238,26 @@ a {
 
 .content__details .content__accent {
     color: var(--gray-color);
-    font-family: inherit;
 }
 
 .content__list {
-    max-height: 300px;
+    height: 300px;
     overflow-y: auto;
     position: relative;
 }
 
 .content__list::-webkit-scrollbar {
-    width: 0;
+    border-radius: 0.5rem;
+    width: 6px;
+}
+
+.content__list::-webkit-scrollbar-track {
+    background-color: #e6e6e6;
+}
+
+.content__list::-webkit-scrollbar-thumb {
+    background-color: #999;
+    border-radius: 0.5rem;
 }
 
 .content__list-item:not(:last-of-type) {
@@ -295,9 +310,13 @@ a {
     padding: .125rem 0 .25rem;
     text-overflow: ellipsis;
     overflow: hidden;
+    max-width: 200px;
+    white-space: nowrap;
 }
 
 .content__video-card-thumbnail {
     width: 194px;
     height: 103px;
+    object-fit: cover;
+    object-position: center;
 }
